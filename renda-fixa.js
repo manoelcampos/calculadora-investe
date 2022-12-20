@@ -27,6 +27,7 @@ const indicadoresBcb = async (numeroSerie) => {
         }
 
         const [ dados ] = await res.json()
+        dados.valor = Number.parseFloat(dados.valor)
         console.log(dados)
         return dados
     }catch(error){
