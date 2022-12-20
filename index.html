@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Form</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"> 
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  </head>
+  <body>
+    <form>
+      <div class="row g-3">
+        <div class="col-md-4">
+          <label for="selic" class="form-label">Taxa Selic</label> 
+          <div class="input-group">
+            <input id="selic" name="selic" type="text" disabled="disabled" class="form-control"> 
+            <div class="input-group-append">
+              <div class="input-group-text">% a.a.</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <label for="tr" class="form-label">TR</label> 
+          <div class="input-group">
+            <input id="tr" name="tr" type="text" disabled="disabled" class="form-control"> 
+            <div class="input-group-append">
+              <div class="input-group-text">% a.a.</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <label for="taxa_poupanca" class="form-label">Rendimento da Poupança</label> 
+          <div class="input-group">
+            <input id="taxa_poupanca" name="taxa_poupanca" disabled="disabled" type="text" class="form-control"> 
+            <div class="input-group-append">
+              <div class="input-group-text">% a.a.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="row g-3">
+        <div class="col-md-4">
+          <label for="montante_inicial" class="col-form-label">Montante Inicial</label> 
+          <div class="input-group">
+            <input id="montante_inicial" name="montante_inicial" type="text" aria-describedby="montante_inicialHelpBlock" required="required" class="form-control"> 
+            <div class="input-group-append">
+              <div class="input-group-text">
+                <i class="fa fa-money"></i>
+              </div>
+            </div>
+          </div> 
+          <span id="montante_inicialHelpBlock" class="form-text text-muted">Valor que investirá inicialmente</span>
+        </div>
+
+        <div class="col-md-4">
+          <label for="tempo_anos" class="col-form-label">Prazo do Investimento</label> 
+          <div class="input-group">
+            <input id="tempo_anos" name="tempo_anos" type="text" required="required" class="form-control"> 
+            <div class="input-group-append">
+              <div class="input-group-text">anos</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <label for="montante-final" class="col-form-label">Montante Final</label> 
+          <div class="input-group">
+            <input id="montante-final" name="montante-final" disabled="disabled" type="text" class="form-control" aria-describedby="montante-finalHelpBlock"> 
+            <div class="input-group-append">
+              <div class="input-group-text">
+                <i class="fa fa-money"></i>
+              </div>
+            </div>
+          </div> 
+          <span id="montante-finalHelpBlock" class="form-text text-muted">Valor total bruto que terá ao final do prazo (antes de descontar IR)</span>
+        </div>
+      </div>
+
+      <div class="row g-3">
+        <div class="col-md-6">
+          <label for="lucro_bruto" class="form-label">Lucro Bruto</label> 
+          <div class="input-group">
+            <input id="lucro_bruto" name="lucro_bruto" type="text" disabled="disabled" aria-describedby="lucro_brutoHelpBlock" class="form-control"> 
+            <div class="input-group-append">
+              <div class="input-group-text">
+                <i class="fa fa-money"></i>
+              </div>
+            </div>
+          </div> 
+          <span id="lucro_brutoHelpBlock" class="form-text text-muted">Lucro obtido ao final do prazo (antes de descontar o IR)</span>
+        </div>
+
+        <div class="col-md-6">
+          <label for="ir" class="form-label">Alíquota IR</label> 
+          <div class="input-group">
+            <input id="ir" name="ir" type="text" class="form-control" disabled="disabled" aria-describedby="irHelpBlock"> 
+            <div class="input-group-append">
+              <div class="input-group-text">
+                <i class="fa fa-percent"></i>
+              </div>
+            </div>
+          </div> 
+          <span id="irHelpBlock" class="form-text text-muted">Percentual de imposto de renda sobre o lucro bruto que você pagará ao final do prazo</span>
+        </div>
+      </div>
+
+      <div class="row g-3">
+        <div class="col-md-6">
+          <label for="lucro_liquido" class="form-label">Lucro Líquido</label> 
+          <div class="input-group">
+            <input id="lucro_liquido" name="lucro_liquido" type="text" disabled="disabled" class="form-control" aria-describedby="lucro_liquidoHelpBlock"> 
+            <div class="input-group-append">
+              <div class="input-group-text">
+                <i class="fa fa-money"></i>
+              </div>
+            </div>
+          </div> 
+          <span id="lucro_liquidoHelpBlock" class="form-text text-muted">Lucro obtido depois de descontado o IR</span>
+        </div>
+      
+        <div class="col-md-6">
+          <label for="rentabilidade_liquida" class="form-label">Rentabilidade Líquida</label> 
+          <div class="input-group">
+            <input id="rentabilidade_liquida" name="rentabilidade_liquida" type="text" disabled="disabled" aria-describedby="rentabilidade_liquidaHelpBlock" class="form-control"> 
+            <div class="input-group-append">
+              <div class="input-group-text">% a.a.</div>
+            </div>
+          </div> 
+          <span id="rentabilidade_liquidaHelpBlock" class="form-text text-muted">Qual o percentual de rentabilidade ao final do prazo depois de descontado o IR</span>
+        </div>
+      </div>       
+    </form>
+  </body>
+</html>
+
+<script type="text/javascript" src="renda-fixa.js"></script>
