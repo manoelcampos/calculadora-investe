@@ -45,7 +45,21 @@ const selicAcumuladaAno = async () => {
     return await indicadoresBcb(numeroSerieSelic)
 }
 
+/**
+ * Obtém dados da TR (Taxa Referencial) acumulada no ano atual (série 226)
+ * @return json com a data e valor percentual da SELIC, como por exemplo: {"data": "19/12/2022", "valor": "13.65"}
+ * @see https://dadosabertos.bcb.gov.br/dataset/1178-taxa-de-juros---selic-anualizada-base-252/resource/8c602f6b-f253-4de5-942d-0e3396b257d2
+ */
+const trAcumuladaAno = async () => {
+    const numeroSerieTR = 226
+    return await indicadoresBcb(numeroSerieTR)
+
+}
+
 $(async () => {
-    const { valor } = await selicAcumuladaAno()
-    $('#selic').val(valor)
+    const selic = await selicAcumuladaAno()
+    $('#selic').val(selic.valor)
+
+    const tr = await trAcumuladaAno()
+    $('#tr').val(tr.valor)
 })
