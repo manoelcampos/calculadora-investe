@@ -11,7 +11,7 @@ const anoAtual = () => new Date().getFullYear()
  * 
  * @param serie número da série temporal que deseja consultar.
  *              Cada série fornece dados temporais de um determinado indicador econômico
- * @return json com a resposta da requisição
+ * @return json com a resposta da requisição (valores percentuais em escala 0..100)
  * @see https://dadosabertos.bcb.gov.br/dataset/1178-taxa-de-juros---selic-anualizada-base-252/resource/8c602f6b-f253-4de5-942d-0e3396b257d2
  */
 const indicadoresBcb = async (numeroSerie) => {
@@ -38,6 +38,7 @@ const indicadoresBcb = async (numeroSerie) => {
 /**
  * Obtém dados da SELIC acumulada no ano atual (série 1178)
  * @return json com a data e valor percentual da SELIC, como por exemplo: {"data": "19/12/2022", "valor": "13.65"}
+ *         (valores percentuais em escala 0..100)
  * @see https://dadosabertos.bcb.gov.br/dataset/1178-taxa-de-juros---selic-anualizada-base-252/resource/8c602f6b-f253-4de5-942d-0e3396b257d2
  */
 const selicAcumuladaAno = async () => {
@@ -48,6 +49,7 @@ const selicAcumuladaAno = async () => {
 /**
  * Obtém dados da TR (Taxa Referencial) acumulada no ano atual (série 226)
  * @return json com a data e valor percentual da SELIC, como por exemplo: {"data": "19/12/2022", "valor": "13.65"}
+ *         (valores percentuais em escala 0..100)
  * @see https://dadosabertos.bcb.gov.br/dataset/1178-taxa-de-juros---selic-anualizada-base-252/resource/8c602f6b-f253-4de5-942d-0e3396b257d2
  */
 const trAcumuladaAno = async () => {
